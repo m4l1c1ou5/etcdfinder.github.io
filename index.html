@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtcdFinder - The Modern Etcd Search & Management Tool</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description"
+        content="Lightning-fast, eventually consistent search for your etcd key-value data powered by Meilisearch.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="EtcdFinder" class="logo-img">
+                <span>EtcdFinder</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#installation">Installation</a>
+                <a href="https://github.com/etcdfinder/etcdfinder" target="_blank" class="github-link">
+                    <i class="fa-brands fa-github"></i>
+                    <span id="stars-count">...</span> Stars
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <div class="badge fade-in-up delay-1">
+                    <span class="pulse"></span>
+                    v<span id="latest-version">0.0.0</span> is now available
+                </div>
+
+                <h1 class="hero-title fade-in-up delay-2">
+                    Search etcd keys<br>
+                    <span class="text-gradient">at lightspeed.</span>
+                </h1>
+
+                <p class="hero-description fade-in-up delay-3">
+                    Your go-to solution for searching and managing etcd key-value data.
+                    Experience lightning-fast, eventually consistent search powered by Meilisearch.
+                </p>
+
+                <div class="hero-actions fade-in-up delay-4">
+                    <a href="#installation" class="btn btn-primary">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://github.com/etcdfinder/etcdfinder" target="_blank" class="btn btn-secondary">
+                        <i class="fa-brands fa-github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual fade-in-up delay-3">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">bash</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="code-line">
+                            <span class="prompt">$</span> ETCD_ENDPOINTS=http://etcd:2379 docker-compose up -d
+                        </div>
+                        <div class="code-line info">
+                            <span class="info-prefix">[+] Running 5/5</span>
+                        </div>
+                        <div class="code-line success">
+                            <span class="success-prefix">✔ Network v3_etcdfinder-net-v3     Created       0.0s</span> 
+                        </div>
+                        <div class="code-line success">
+                            <span class="success-prefix">✔ Volume v3_meilisearch_data_v3     Created       0.0s</span>
+                        </div>
+                        <div class="code-line success">
+                            <span class="success-prefix">✔ Container v3-meilisearch-v3-1     Started       0.4s</span>
+                        </div>
+                        <div class="code-line success">
+                            <span class="success-prefix">✔ Container v3-etcdfinder-v3-1     Started       0.4s</span>
+                        </div>
+                        <div class="code-line success">
+                            <span class="success-prefix">✔ Container v3-etcdfinder-ui-v3-1    Started       0.4s</span>
+                        </div>
+                        <div class="typing-cursor"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <div class="section-header">
+                <h2>Why EtcdFinder?</h2>
+                <p>Built for performance, designed for ease of use.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Blazing Fast</h3>
+                    <p>Leverages Meilisearch to provide instant search results across millions of keys without breaking
+                        a sweat.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-sync"></i>
+                    </div>
+                    <h3>Eventual Consistency</h3>
+                    <p>Keeps your search index seamlessly in sync with your etcd cluster changes.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-brands fa-docker"></i>
+                    </div>
+                    <h3>Docker Ready</h3>
+                    <p>Deploy anywhere with official Docker images. Supports multi-arch builds for amd64 and arm64.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Developer Friendly</h3>
+                    <p>Simple configuration via environment variables or YAML files. Built with Go for reliability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="installation container">
+            <div class="installation-wrapper">
+                <div class="installation-content">
+                    <h2>Ready to get started?</h2>
+                    <p>Get up and running in seconds with Docker Compose.</p>
+
+                    <div class="tab-container">
+                        <div class="tabs">
+                            <button class="tab active" data-target="quickstart">Quickstart</button>
+                            <button class="tab" data-target="v3">Docker V3</button>
+                            <button class="tab" data-target="v2">Docker V2</button>
+                            <button class="tab" data-target="k8s">Kubernetes</button>
+                        </div>
+
+                        <div class="tab-pane active" id="quickstart">
+                            <pre><code>services:
+  etcdfinder-ui:
+    image: ghcr.io/etcdfinder/etcdfinder-ui:latest
+    pull_policy: always
+    container_name: etcdfinder-ui
+    ports:
+      - "3000:3000"
+    networks:
+      - etcdfinder-net
+    environment:
+      BACKEND_URL: http://etcdfinder:8080
+    restart: unless-stopped
+    depends_on:
+      - etcdfinder
+
+  etcdfinder:
+    image: ghcr.io/etcdfinder/etcdfinder:latest 
+    pull_policy: always
+    container_name: etcdfinder
+    expose:
+      - "8080"
+    networks:
+      - etcdfinder-net
+    environment:
+      ETCD_ENDPOINTS: http://etcd:2379
+      DATASTORE_MEILISEARCH_HOST: http://meilisearch:7700
+    restart: unless-stopped
+    depends_on:
+      - meilisearch
+
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    pull_policy: always
+    container_name: meilisearch
+    expose:
+      - "7700"
+    networks:
+      - etcdfinder-net
+    environment:
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - meilisearch_data:/var/lib/meilisearch
+    restart: unless-stopped
+
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.13
+    pull_policy: always
+    container_name: etcd
+    expose:
+      - "2379"
+    networks:
+      - etcdfinder-net
+    environment:
+      ETCD_NAME: etcd
+      ETCD_DATA_DIR: /etcd-data
+      ETCD_LISTEN_CLIENT_URLS: http://0.0.0.0:2379
+      ETCD_ADVERTISE_CLIENT_URLS: http://etcd:2379
+      ETCD_LISTEN_PEER_URLS: http://0.0.0.0:2380
+      ETCD_INITIAL_ADVERTISE_PEER_URLS: http://etcd:2380
+      ETCD_INITIAL_CLUSTER: etcd=http://etcd:2380
+      ETCD_INITIAL_CLUSTER_STATE: new
+      ETCD_ENABLE_V2: "true"
+    volumes:
+      - etcd_data:/etcd-data
+    restart: unless-stopped
+    
+networks:
+  etcdfinder-net:
+    driver: bridge
+
+volumes:
+  meilisearch_data:
+  etcd_data:</code></pre>
+                            <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <div class="tab-pane scrollable" id="v3">
+                            <pre><code>services:
+  etcdfinder-ui-v3:
+    image: ghcr.io/etcdfinder/etcdfinder-ui:latest
+    pull_policy: always
+    ports:
+      - "3000:3000"
+    networks:
+      - etcdfinder-net-v3
+    environment:
+      BACKEND_URL: http://etcdfinder-v3:8080
+    restart: unless-stopped
+    depends_on:
+      - etcdfinder-v3
+  etcdfinder-v3:
+    image: ghcr.io/etcdfinder/etcdfinder:latest
+    pull_policy: always
+    expose:
+      - "8080"
+    networks:
+      - etcdfinder-net-v3
+    environment:
+      ETCD_ENDPOINTS: ${ETCD_ENDPOINTS:?Please set ETCD_ENDPOINTS environment variable or use the quickstart deployment (cd ../quickstart && docker-compose up)}
+      DATASTORE_MEILISEARCH_HOST: http://meilisearch-v3:7700
+    restart: unless-stopped
+    depends_on:
+      - meilisearch-v3
+  meilisearch-v3:
+    image: getmeili/meilisearch:latest
+    pull_policy: always
+    expose:
+      - "7700"
+    networks:
+      - etcdfinder-net-v3
+    environment:
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - meilisearch_data_v3:/var/lib/meilisearch
+    restart: unless-stopped
+    
+networks:
+  etcdfinder-net-v3:
+    driver: bridge
+
+volumes:
+  meilisearch_data_v3:</code></pre>
+                            <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <div class="tab-pane scrollable" id="v2">
+                            <pre><code>services:
+  etcdfinder-ui-v2:
+    image: ghcr.io/etcdfinder/etcdfinder-ui:latest
+    pull_policy: always
+    ports:
+      - "3001:3000"
+    networks:
+      - etcdfinder-net-v2
+    environment:
+      BACKEND_URL: http://etcdfinder-v2:8080
+    restart: unless-stopped
+    depends_on:
+      - etcdfinder-v2
+  etcdfinder-v2:
+    image: ghcr.io/etcdfinder/etcdfinder:latest
+    pull_policy: always
+    expose:
+      - "8080"
+    networks:
+      - etcdfinder-net-v2
+    environment:
+      ETCD_ENDPOINTS: ${ETCD_ENDPOINTS:?Please set ETCD_ENDPOINTS environment variable or use the quickstart deployment (cd ../quickstart && docker-compose up)}
+      ETCD_VERSION: v2
+      DATASTORE_MEILISEARCH_HOST: http://meilisearch-v2:7700
+    restart: unless-stopped
+    depends_on:
+      - meilisearch-v2
+  meilisearch-v2:
+    image: getmeili/meilisearch:latest
+    pull_policy: always
+    expose:
+      - "7700"
+    networks:
+      - etcdfinder-net-v2
+    environment:
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - meilisearch_data_v2:/var/lib/meilisearch
+    restart: unless-stopped
+    
+networks:
+  etcdfinder-net-v2:
+    driver: bridge
+
+volumes:
+  meilisearch_data_v2:</code></pre>
+                            <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <div class="tab-pane scrollable" id="k8s">
+                            <div class="coming-soon">
+                                <i class="fa-solid fa-rocket"></i>
+                                <h3>Coming Soon</h3>
+                                <p>We are working on Kubernetes Manifests and Helm Charts. Stay tuned!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="EtcdFinder" class="logo-img-sm">
+                <span>EtcdFinder</span>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://github.com/etcdfinder/etcdfinder">GitHub</a>
+                <a href="https://github.com/etcdfinder/etcdfinder/issues">Issues</a>
+                <a href="https://github.com/etcdfinder/etcdfinder/releases">Releases</a>
+            </div>
+
+            <p class="copyright">&copy; 2026 EtcdFinder. Open Source under Apache 2.0 License.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
