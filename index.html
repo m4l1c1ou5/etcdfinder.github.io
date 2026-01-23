@@ -2,174 +2,201 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EtcdFinder - The Modern Etcd Search & Management Tool</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <meta name="description"
-        content="Lightning-fast, eventually consistent search for your etcd key-value data powered by Meilisearch.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+  <!-- Primary Meta Tags -->
+  <title>EtcdFinder - Modern UI Client for Etcd Search & Management</title>
+  <meta name="title" content="EtcdFinder - Modern UI Client for Etcd Search & Management">
+  <meta name="description"
+    content="Lightning-fast web UI client for etcd key-value store. Search and manage etcd keys with instant results powered by Meilisearch. Eventually consistent, Docker-ready, supports etcd v2 and v3.">
+  <meta name="keywords"
+    content="etcd, etcd ui, etcd client, etcd web interface, etcd search, etcd management tool, etcd gui, key-value store, meilisearch, docker etcd, kubernetes etcd, etcd v2, etcd v3, distributed systems, configuration management">
+  <meta name="author" content="EtcdFinder">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://etcdfinder.github.io/">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://etcdfinder.github.io/">
+  <meta property="og:title" content="EtcdFinder - Modern UI Client for Etcd Search & Management">
+  <meta property="og:description"
+    content="Lightning-fast web UI client for etcd key-value store. Search and manage etcd keys with instant results powered by Meilisearch.">
+  <meta property="og:image" content="https://etcdfinder.github.io/logo.png">
+  <meta property="og:site_name" content="EtcdFinder">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://etcdfinder.github.io/">
+  <meta property="twitter:title" content="EtcdFinder - Modern UI Client for Etcd Search & Management">
+  <meta property="twitter:description"
+    content="Lightning-fast web UI client for etcd key-value store. Search and manage etcd keys with instant results powered by Meilisearch.">
+  <meta property="twitter:image" content="https://etcdfinder.github.io/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="noise-overlay"></div>
+  <div class="noise-overlay"></div>
 
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="EtcdFinder" class="logo-img">
-                <span>EtcdFinder</span>
-            </a>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="EtcdFinder" class="logo-img">
+        <span>EtcdFinder</span>
+      </a>
 
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#installation">Installation</a>
-                <a href="https://github.com/etcdfinder/etcdfinder" target="_blank" class="github-link">
-                    <i class="fa-brands fa-github"></i>
-                    <span id="stars-count">...</span> Stars
-                </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#installation">Installation</a>
+        <a href="https://github.com/etcdfinder/etcdfinder" target="_blank" class="github-link">
+          <i class="fa-brands fa-github"></i>
+          <span id="stars-count">...</span> Stars
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <div class="badge fade-in-up delay-1">
+          <span class="pulse"></span>
+          v<span id="latest-version">0.0.0</span> is now available
+        </div>
+
+        <h1 class="hero-title fade-in-up delay-2">
+          Search etcd keys<br>
+          <span class="text-gradient">at lightspeed.</span>
+        </h1>
+
+        <p class="hero-description fade-in-up delay-3">
+          Your go-to solution for searching and managing etcd key-value data.
+          Experience lightning-fast, eventually consistent search powered by Meilisearch.
+        </p>
+
+        <div class="hero-actions fade-in-up delay-4">
+          <a href="#installation" class="btn btn-primary">
+            Get Started
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://github.com/etcdfinder/etcdfinder" target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-github"></i>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-in-up delay-3">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
             </div>
-        </nav>
-    </header>
+            <span class="terminal-title">bash</span>
+          </div>
+          <div class="terminal-body">
+            <div class="code-line">
+              <span class="prompt">$</span> ETCD_ENDPOINTS=http://etcd:2379 docker-compose up -d
+            </div>
+            <div class="code-line info">
+              <span class="info-prefix">[+] Running 5/5</span>
+            </div>
+            <div class="code-line success">
+              <span class="success-prefix">✔ Network v3_etcdfinder-net-v3 Created 0.0s</span>
+            </div>
+            <div class="code-line success">
+              <span class="success-prefix">✔ Volume v3_meilisearch_data_v3 Created 0.0s</span>
+            </div>
+            <div class="code-line success">
+              <span class="success-prefix">✔ Container v3-meilisearch-v3-1 Started 0.4s</span>
+            </div>
+            <div class="code-line success">
+              <span class="success-prefix">✔ Container v3-etcdfinder-v3-1 Started 0.4s</span>
+            </div>
+            <div class="code-line success">
+              <span class="success-prefix">✔ Container v3-etcdfinder-ui-v3-1 Started 0.4s</span>
+            </div>
+            <div class="typing-cursor"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <main>
-        <section class="hero container">
-            <div class="hero-content">
-                <div class="badge fade-in-up delay-1">
-                    <span class="pulse"></span>
-                    v<span id="latest-version">0.0.0</span> is now available
-                </div>
+    <section id="features" class="features container">
+      <div class="section-header">
+        <h2>Why EtcdFinder?</h2>
+        <p>Built for performance, designed for ease of use.</p>
+      </div>
 
-                <h1 class="hero-title fade-in-up delay-2">
-                    Search etcd keys<br>
-                    <span class="text-gradient">at lightspeed.</span>
-                </h1>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3>Blazing Fast</h3>
+          <p>Leverages Meilisearch to provide instant search results across millions of keys without breaking
+            a sweat.</p>
+        </div>
 
-                <p class="hero-description fade-in-up delay-3">
-                    Your go-to solution for searching and managing etcd key-value data.
-                    Experience lightning-fast, eventually consistent search powered by Meilisearch.
-                </p>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-sync"></i>
+          </div>
+          <h3>Eventual Consistency</h3>
+          <p>Keeps your search index seamlessly in sync with your etcd cluster changes.</p>
+        </div>
 
-                <div class="hero-actions fade-in-up delay-4">
-                    <a href="#installation" class="btn btn-primary">
-                        Get Started
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="https://github.com/etcdfinder/etcdfinder" target="_blank" class="btn btn-secondary">
-                        <i class="fa-brands fa-github"></i>
-                        View on GitHub
-                    </a>
-                </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-brands fa-docker"></i>
+          </div>
+          <h3>Docker Ready</h3>
+          <p>Deploy anywhere with official Docker images. Supports multi-arch builds for amd64 and arm64.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>Developer Friendly</h3>
+          <p>Simple configuration via environment variables or YAML files. Built with Go for reliability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="installation" class="installation container">
+      <div class="installation-wrapper">
+        <div class="installation-content">
+          <h2>Ready to get started?</h2>
+          <p>Get up and running in seconds with Docker Compose.</p>
+
+          <div class="tab-container">
+            <div class="tabs">
+              <button class="tab active" data-target="quickstart">Quickstart</button>
+              <button class="tab" data-target="v3">Docker V3</button>
+              <button class="tab" data-target="v2">Docker V2</button>
+              <button class="tab" data-target="k8s">Kubernetes</button>
             </div>
 
-            <div class="hero-visual fade-in-up delay-3">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <span class="terminal-title">bash</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="code-line">
-                            <span class="prompt">$</span> ETCD_ENDPOINTS=http://etcd:2379 docker-compose up -d
-                        </div>
-                        <div class="code-line info">
-                            <span class="info-prefix">[+] Running 5/5</span>
-                        </div>
-                        <div class="code-line success">
-                            <span class="success-prefix">✔ Network v3_etcdfinder-net-v3     Created       0.0s</span> 
-                        </div>
-                        <div class="code-line success">
-                            <span class="success-prefix">✔ Volume v3_meilisearch_data_v3     Created       0.0s</span>
-                        </div>
-                        <div class="code-line success">
-                            <span class="success-prefix">✔ Container v3-meilisearch-v3-1     Started       0.4s</span>
-                        </div>
-                        <div class="code-line success">
-                            <span class="success-prefix">✔ Container v3-etcdfinder-v3-1     Started       0.4s</span>
-                        </div>
-                        <div class="code-line success">
-                            <span class="success-prefix">✔ Container v3-etcdfinder-ui-v3-1    Started       0.4s</span>
-                        </div>
-                        <div class="typing-cursor"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="features container">
-            <div class="section-header">
-                <h2>Why EtcdFinder?</h2>
-                <p>Built for performance, designed for ease of use.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <h3>Blazing Fast</h3>
-                    <p>Leverages Meilisearch to provide instant search results across millions of keys without breaking
-                        a sweat.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-sync"></i>
-                    </div>
-                    <h3>Eventual Consistency</h3>
-                    <p>Keeps your search index seamlessly in sync with your etcd cluster changes.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-brands fa-docker"></i>
-                    </div>
-                    <h3>Docker Ready</h3>
-                    <p>Deploy anywhere with official Docker images. Supports multi-arch builds for amd64 and arm64.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3>Developer Friendly</h3>
-                    <p>Simple configuration via environment variables or YAML files. Built with Go for reliability.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="installation" class="installation container">
-            <div class="installation-wrapper">
-                <div class="installation-content">
-                    <h2>Ready to get started?</h2>
-                    <p>Get up and running in seconds with Docker Compose.</p>
-
-                    <div class="tab-container">
-                        <div class="tabs">
-                            <button class="tab active" data-target="quickstart">Quickstart</button>
-                            <button class="tab" data-target="v3">Docker V3</button>
-                            <button class="tab" data-target="v2">Docker V2</button>
-                            <button class="tab" data-target="k8s">Kubernetes</button>
-                        </div>
-
-                        <div class="tab-pane active" id="quickstart">
-                            <pre><code>services:
+            <div class="tab-pane active" id="quickstart">
+              <pre><code>services:
   etcdfinder-ui:
     image: ghcr.io/etcdfinder/etcdfinder-ui:latest
     pull_policy: always
@@ -242,11 +269,11 @@ networks:
 volumes:
   meilisearch_data:
   etcd_data:</code></pre>
-                            <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                        </div>
+              <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+            </div>
 
-                        <div class="tab-pane scrollable" id="v3">
-                            <pre><code>services:
+            <div class="tab-pane scrollable" id="v3">
+              <pre><code>services:
   etcdfinder-ui-v3:
     image: ghcr.io/etcdfinder/etcdfinder-ui:latest
     pull_policy: always
@@ -291,11 +318,11 @@ networks:
 
 volumes:
   meilisearch_data_v3:</code></pre>
-                            <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                        </div>
+              <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+            </div>
 
-                        <div class="tab-pane scrollable" id="v2">
-                            <pre><code>services:
+            <div class="tab-pane scrollable" id="v2">
+              <pre><code>services:
   etcdfinder-ui-v2:
     image: ghcr.io/etcdfinder/etcdfinder-ui:latest
     pull_policy: always
@@ -341,40 +368,85 @@ networks:
 
 volumes:
   meilisearch_data_v2:</code></pre>
-                            <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                        </div>
-
-                        <div class="tab-pane scrollable" id="k8s">
-                            <div class="coming-soon">
-                                <i class="fa-solid fa-rocket"></i>
-                                <h3>Coming Soon</h3>
-                                <p>We are working on Kubernetes Manifests and Helm Charts. Stay tuned!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="logo.png" alt="EtcdFinder" class="logo-img-sm">
-                <span>EtcdFinder</span>
+              <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
             </div>
 
-            <div class="footer-links">
-                <a href="https://github.com/etcdfinder/etcdfinder">GitHub</a>
-                <a href="https://github.com/etcdfinder/etcdfinder/issues">Issues</a>
-                <a href="https://github.com/etcdfinder/etcdfinder/releases">Releases</a>
+            <div class="tab-pane scrollable" id="k8s">
+              <div class="coming-soon">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Coming Soon</h3>
+                <p>We are working on Kubernetes Manifests and Helm Charts. Stay tuned!</p>
+              </div>
             </div>
-
-            <p class="copyright">&copy; 2026 EtcdFinder. Open Source under Apache 2.0 License.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="logo.png" alt="EtcdFinder" class="logo-img-sm">
+        <span>EtcdFinder</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/etcdfinder/etcdfinder">GitHub</a>
+        <a href="https://github.com/etcdfinder/etcdfinder/issues">Issues</a>
+        <a href="https://github.com/etcdfinder/etcdfinder/releases">Releases</a>
+      </div>
+
+      <p class="copyright">&copy; 2026 EtcdFinder. Open Source under Apache 2.0 License.</p>
+    </div>
+  </footer>
+
+  <!-- JSON-LD Structured Data for SEO and LLMs -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "EtcdFinder",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS, Windows",
+      "description": "EtcdFinder is a modern web UI client for etcd, providing lightning-fast search and management capabilities for etcd key-value stores. It offers eventually consistent search powered by Meilisearch, supports both etcd v2 and v3, and is designed for easy deployment with Docker.",
+      "url": "https://etcdfinder.github.io/",
+      "downloadUrl": "https://github.com/etcdfinder/etcdfinder/releases",
+      "softwareVersion": "latest",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "EtcdFinder",
+        "url": "https://github.com/etcdfinder"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EtcdFinder"
+      },
+      "screenshot": "https://etcdfinder.github.io/logo.png",
+      "featureList": [
+        "Lightning-fast search for etcd keys",
+        "Eventually consistent indexing with Meilisearch",
+        "Support for etcd v2 and v3",
+        "Docker and Docker Compose deployment",
+        "Multi-architecture support (amd64, arm64)",
+        "Modern web-based UI",
+        "RESTful API",
+        "Real-time synchronization with etcd cluster"
+      ],
+      "keywords": "etcd, etcd ui, etcd client, etcd web interface, etcd search, etcd management tool, key-value store, meilisearch, docker, kubernetes, distributed systems",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "codeRepository": "https://github.com/etcdfinder/etcdfinder",
+      "programmingLanguage": "Go",
+      "runtimePlatform": "Docker"
+    }
+    </script>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
